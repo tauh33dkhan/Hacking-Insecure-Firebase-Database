@@ -3,11 +3,12 @@
 
 ### Allows both read and write
 
-Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read and insert the data in the database
+Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read and write data in database.
 
 For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
-## POC
+
+#### POC 
 ```
 curl -X POST https://insecure-firebase.firebaseio.com/testing.json \
 -d '{"cat": "meow", "dog": "bowbow"}'
