@@ -18,7 +18,7 @@ and you will see new data is added to database
 
 
 
-## firebase rules configuration which leads to this vulnerability
+## firebase configuration rules which leads to this vulnerability
 
 ```
 {
