@@ -1,7 +1,7 @@
 # Insecure-Firebase
 
 
-# Allows both read and write
+### Allows both read and write
 
 Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read and insert the data in the database
 
@@ -30,7 +30,7 @@ and you will see new data is added to database
 }
 ```
 As you can see in the above configuration both read and write set to true which means anyone can read and write to
-this firebase database developer some times use this settings for testing purpose but letter forgets to change this
+this firebase database, developer some times use this settings for testing purpose but letter forgets to change this
 to only allow app users to read or write data.
 
 ## Default(secure) firebase rules configuration 
