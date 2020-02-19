@@ -1,4 +1,4 @@
-# Insecure-Firebase
+# Insecure-Firebase-Database
 
 
 ### Allows both read and write
