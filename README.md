@@ -1,11 +1,9 @@
 # Insecure-Firebase
 
-Add '.json' at the end of firebase database url 
 
-For example: https://insecure-firebase.firebaseio.com/.json
+Add '.json' at the end of firebase database url if you see `null` in reponse that means the firebase database is insecure and anyone can read and insert the data in the database
 
-If you see `null` in reponse that means the firebase database is insecure and anyone can read and insert the data in 
-the database
+For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
 ## POC
 ```
