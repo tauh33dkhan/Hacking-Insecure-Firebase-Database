@@ -1,4 +1,4 @@
-# Hacking-Insecure-Firebase
+# Insecure-Firebase
 
 ### Allows both read and write
 
