@@ -66,7 +66,7 @@ For the purpose of demonstration i deployed a firebase database with the above r
 you will get `permission denied` error but if you go to https://in-firebase-683e6.firebaseio.com/Users.json you will get user data which is exposed due to rule set on `Users` node. So we can bruteforce endpoints to find other vulnerable endpoints.
 
 
-Then I got the another catch that developer can also set only write access to the endpoint which means if go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
+Also developer can set only write access to the endpoint which means if go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
 
 `
 {
