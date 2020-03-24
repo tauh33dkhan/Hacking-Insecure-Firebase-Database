@@ -90,5 +90,5 @@ curl -X POST https://in-firebase-683e6.firebaseio.com/Logs.json -d '{"test": "te
 If you run the above command you will get something like this in response `{"name":"-M3B_iyZE1RPDaPNuknX"}` which means write is successfull.
 
 
-##### I encourage you to setup your own database and test on it before palying with program production database a simple mistake can mess all the data out there.
+##### I encourage you to setup your own database and test on it before palying with programe production database a simple mistake can mess all the data out there.
 
