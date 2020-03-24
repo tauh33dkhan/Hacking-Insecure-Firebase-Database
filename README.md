@@ -1,8 +1,8 @@
 # Insecure-Firebase
 
-### Allows both read and write
+### Allows read or read and write
 
-Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read and write data in database.
+Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read or read and write data in database.
 
 For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
@@ -35,14 +35,32 @@ As you can see in the above configuration both read and write set to true which 
 this firebase database, developer some times use this settings for testing purpose but letter forgets to change this
 to only allow app users to read or write data.
 
-## Default(secure) firebase rules configuration 
+### Case 2:
+
+### When the child is specified with no auth
+
+When testing firebase database what i was doing before is adding .json at the end of the firbase database url if it returns `null` or data it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
+
+Then I watched a video shared by @B3nac where he showed that developer can set rules for child nodes also. Like this:
 
 ```
 {
   /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
   "rules": {
+    "Admin": {
     ".read": false,
     ".write": false
+    },
+    "Users": {
+      ".read": true,
+      ".write": false
+    }
   }
 }
 ```
+
+For the purpose of demonstration i deployed a firebase database with the above rules so if you go to 
+
+`https://in-firebase-683e6.firebaseio.com/.json` 
+
+you will get `permission denied` error but if you go to https://in-firebase-683e6.firebaseio.com/Users.json you will get user data which is exposed due to rule set on `Users` node. So we can bruteforce endpoints to find other vulnerable endpoints.
