@@ -39,7 +39,7 @@ to only allow app users to read or write data.
 
 ### When the child is specified with no auth
 
-When testing firebase database what i was doing before is adding .json at the end of the firbase database url if it returns `null` or data it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
+When testing firebase database what i was doing before is adding .json at the end of the firebase database url if it returns `null` or data it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
 
 Then I watched a video shared by @B3nac where he showed that developer can set rules for child nodes also. Like this:
 
@@ -64,3 +64,31 @@ For the purpose of demonstration i deployed a firebase database with the above r
 `https://in-firebase-683e6.firebaseio.com/.json` 
 
 you will get `permission denied` error but if you go to https://in-firebase-683e6.firebaseio.com/Users.json you will get user data which is exposed due to rule set on `Users` node. So we can bruteforce endpoints to find other vulnerable endpoints.
+
+
+Then I got the another catch that developer can also set only write access to the endpoint which means if go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
+
+`
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    "Logs": {
+      ".read": false,
+      ".write": true
+    }
+  }
+}
+`
+
+Here developer sets the write rule at Logs endpoint, So if you go to https://in-firebase-683e6.firebaseio.com/Logs.json you will get `permission denied` error but you can write data to it 
+
+Example:
+```
+curl -X POST https://in-firebase-683e6.firebaseio.com/Logs.json -d '{"test": "testing"}'
+```
+
+If you run the above command you will get something like this in response `{"name":"-M3B_iyZE1RPDaPNuknX"}` which means write is successfull otherwise you will get the permission denied error.
+
+
+##### I encourage you to setup your own database and test on it before palying with program production database a simple mistake can mess all the data out there.
+
