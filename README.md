@@ -66,7 +66,7 @@ For the purpose of demonstration i deployed a firebase database with the above r
 you will get `permission denied` error but if you go to https://in-firebase-683e6.firebaseio.com/Users.json you will get user data which is exposed due to rule set on `Users` node. So we can bruteforce endpoints to find other vulnerable endpoints.
 
 
-Also developer can set only write access to the endpoint which means if go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
+The I thought that developer can set only write access to the endpoint which means if we go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
 
 `
 {
@@ -80,14 +80,14 @@ Also developer can set only write access to the endpoint which means if go to th
 }
 `
 
-Here developer sets the write rule at Logs endpoint, So if you go to https://in-firebase-683e6.firebaseio.com/Logs.json you will get `permission denied` error but you can write data to it 
+Here developer sets the write rule at `Logs` endpoint, So if you go to https://in-firebase-683e6.firebaseio.com/Logs.json you will get `permission denied` error but you can write data to it. 
 
 Example:
 ```
 curl -X POST https://in-firebase-683e6.firebaseio.com/Logs.json -d '{"test": "testing"}'
 ```
 
-If you run the above command you will get something like this in response `{"name":"-M3B_iyZE1RPDaPNuknX"}` which means write is successfull otherwise you will get the permission denied error.
+If you run the above command you will get something like this in response `{"name":"-M3B_iyZE1RPDaPNuknX"}` which means write is successfull.
 
 
 ##### I encourage you to setup your own database and test on it before palying with program production database a simple mistake can mess all the data out there.
