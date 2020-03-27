@@ -99,7 +99,7 @@ Developer can restrict api key to control which website, IP address or applicati
 ![alt api-restriction](https://raw.githubusercontent.com/tauh33dkhan/Hacking-Insecure-Firebase-Database/master/api-restrict.png)
 
 ### Extra
-### Recovering Firebase remote config 
+#### Recovering Firebase remote config 
 
 https://blog.deesee.xyz/android/automation/2019/08/03/firebase-remote-config-dump.html
 
