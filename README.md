@@ -98,5 +98,11 @@ Currently working on this i will add more details later
 Developer can restrict api key to control which website, IP address or application can use API key 
 ![alt api-restriction](https://raw.githubusercontent.com/tauh33dkhan/Hacking-Insecure-Firebase-Database/master/api-restrict.png)
 
-##### I encourage you to setup your own database and test on it before palying with production database a simple mistake can mess all the data out there.
+### Extra
+### Recovering Firebase remote config 
+
+https://blog.deesee.xyz/android/automation/2019/08/03/firebase-remote-config-dump.html
+
+
+### I encourage you to setup your own database and test on it before palying with production database a simple mistake can mess all the data out there.
 
