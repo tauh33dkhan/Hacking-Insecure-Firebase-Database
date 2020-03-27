@@ -1,6 +1,6 @@
 # Insecure-Firebase
 
-### Allows read or read and write
+### Allow Anonymous read and write or only read 
 
 Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read or read and write data in database.
 
@@ -66,9 +66,9 @@ For the purpose of demonstration i deployed a firebase database with the above r
 you will get `permission denied` error but if you go to https://in-firebase-683e6.firebaseio.com/Users.json you will get user data which is exposed due to rule set on `Users` node. So we can bruteforce endpoints to find other vulnerable endpoints.
 
 
-The I thought that developer can set only write access to the endpoint which means if we go to that endpoint we will get `permission denied` error but if we try to write some data we can. The permission rule at development end will look like this:
+Then I thought that developer can also set only write access to an endpoint which means if we go to that endpoint we will get `permission denied` error but if we try to write some data we can write. The permission rule at development end will look like this:
 
-`
+```
 {
   /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
   "rules": {
@@ -78,7 +78,7 @@ The I thought that developer can set only write access to the endpoint which mea
     }
   }
 }
-`
+```
 
 Here developer sets the write rule at `Logs` endpoint, So if you go to https://in-firebase-683e6.firebaseio.com/Logs.json you will get `permission denied` error but you can write data to it. 
 
@@ -90,5 +90,14 @@ curl -X POST https://in-firebase-683e6.firebaseio.com/Logs.json -d '{"test": "te
 If you run the above command you will get something like this in response `{"name":"-M3B_iyZE1RPDaPNuknX"}` which means write is successfull.
 
 
-##### I encourage you to setup your own database and test on it before palying with programe production database a simple mistake can mess all the data out there.
+## Exploiting with Firebase API key
+
+If you have found the firebase api keys in a app then you can use the following  
+
+```
+Currently working on this i will add this later 
+```
+
+
+##### I encourage you to setup your own database and test on it before palying with production database a simple mistake can mess all the data out there.
 
