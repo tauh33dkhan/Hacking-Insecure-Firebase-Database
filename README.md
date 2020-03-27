@@ -92,12 +92,11 @@ If you run the above command you will get something like this in response `{"nam
 
 ## Exploiting with Firebase API key
 
-If you have found the firebase api keys in a app then you can use the following  
-
 ```
-Currently working on this i will add this later 
+Currently working on this i will add more details later 
 ```
-
+Developer can restrict api key to control which website, IP address or application can use API key 
+![alt api-restriction](https://raw.githubusercontent.com/tauh33dkhan/Hacking-Insecure-Firebase-Database/master/api-restrict.png)
 
 ##### I encourage you to setup your own database and test on it before palying with production database a simple mistake can mess all the data out there.
 
