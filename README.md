@@ -20,7 +20,7 @@ and you will see new data is added to database
 
 
 
-## firebase configuration rules which leads to this vulnerability
+## Firebase configuration rules which leads to this vulnerability
 
 ```
 {
