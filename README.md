@@ -20,7 +20,7 @@ and you will see new data is added to database
 
 
 
-## Firebase configuration rules which leads to this vulnerability
+### Firebase configuration rules which leads to this vulnerability
 
 ```
 {
@@ -99,10 +99,11 @@ Developer can restrict api key to control which website, IP address or applicati
 ![alt api-restriction](https://raw.githubusercontent.com/tauh33dkhan/Hacking-Insecure-Firebase-Database/master/api-restrict.png)
 
 ### Extra
-#### Recovering Firebase remote config 
 
-https://blog.deesee.xyz/android/automation/2019/08/03/firebase-remote-config-dump.html
+Recovering Firebase remote config: https://blog.deesee.xyz/android/automation/2019/08/03/firebase-remote-config-dump.html
 
+### Note
+Please setup your own database and test on it before palying with production database because one mistake can mess all the data out there.
 
-### I encourage you to setup your own database and test on it before palying with production database a simple mistake can mess all the data out there.
-
+#### Contact Me
+![@tauh33dkhan](https://twitter.com/tauh33dkhan)
