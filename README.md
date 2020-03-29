@@ -1,8 +1,8 @@
 # Insecure-Firebase
 
-### Allow Anonymous read and write or only read 
+### Allows Anonymous read and write or only read access 
 
-Add '.json' at the end of firebase database url if you see `null` or data in reponse that means the firebase database is insecure and anyone can read or read and write data in database.
+Add '.json' at the end of firebase database url if you see `null` or `data` in response that means the firebase database is insecure and anyone can read and write or read data of the database.
 
 For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
@@ -33,7 +33,7 @@ and you will see new data is added to database
 ```
 As you can see in the above configuration both read and write set to true which means anyone can read and write to
 this firebase database, developer some times use this settings for testing purpose but letter forgets to change this
-to only allow app users to read or write data.
+to only allow app users to read or write data (rare to find).
 
 ### Case 2:
 
@@ -41,7 +41,8 @@ to only allow app users to read or write data.
 
 When testing firebase database what i was doing before is adding .json at the end of the firebase database url if it returns `null` or data it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
 
-Then I watched a video shared by @B3nac where he showed that developer can set rules for child nodes also. Like this:
+Then I watched a video shared by [@B3nac](https://twitter.com/B3nac)
+ where he showed that developer can set rules for child nodes also. Like this:
 
 ```
 {
@@ -106,4 +107,4 @@ Recovering Firebase remote config: https://blog.deesee.xyz/android/automation/20
 Please setup your own database and test on it before palying with production database because one mistake can mess all the data out there.
 
 #### Contact Me
-![@tauh33dkhan](https://twitter.com/tauh33dkhan)
+[@tauh33dkhan](https://twitter.com/tauh33dkhan)
