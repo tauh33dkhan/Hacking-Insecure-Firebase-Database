@@ -4,7 +4,7 @@
 
 ### Allows Anonymous read and write or only read access 
 
-Add '.json' at the end of firebase database url if you see `null` or `data` in response that means the firebase database is insecure and anyone can read and write or read data of the database.
+Add '.json' at the end of firebase database url if you see `null` or `data` in response that means database is insecure and anyone can read/write or read data of database.
 
 For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 
@@ -14,7 +14,7 @@ For example: https://insecure-firebase.firebaseio.com/.json returns `null`
 curl -X POST https://insecure-firebase.firebaseio.com/testing.json \
 -d '{"cat": "meow", "dog": "bowbow"}'
 ```
-This will create a new data location `/testing` in the database
+This will create a new data location `/testing` in database
 
 Now visit https://insecure-firebase.firebaseio.com/testing.json or https://insecure-firebase.firebaseio.com/.json
 
@@ -41,7 +41,7 @@ to only allow app users to read or write data (rare to find).
 
 ### When the child is specified with no auth
 
-When testing firebase database what i was doing before is adding .json at the end of the firebase database url if it returns `null` or data it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
+When testing firebase database what i was doing before is adding .json at the end of database url if it returns `null` or any data then it means that database is vulnerable but if it returns `permission denied` then it means database is secure.
 
 Then I watched a video shared by [@B3nac](https://twitter.com/B3nac)
  where he showed that developer can set rules for child nodes also. Like this:
@@ -96,7 +96,7 @@ If you run the above command you will get something like this in response `{"nam
 ## Exploiting with Firebase API key
 
 ```
-Currently working on this i will add more details later 
+Currently working on this I will add more details later 
 ```
 Developer can restrict api key to control which website, IP address or application can use API key 
 ![alt api-restriction](https://raw.githubusercontent.com/tauh33dkhan/Hacking-Insecure-Firebase-Database/master/api-restrict.png)
