@@ -1,5 +1,7 @@
 # Insecure-Firebase
 
+### Case 1:
+
 ### Allows Anonymous read and write or only read access 
 
 Add '.json' at the end of firebase database url if you see `null` or `data` in response that means the firebase database is insecure and anyone can read and write or read data of the database.
